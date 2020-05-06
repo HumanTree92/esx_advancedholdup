@@ -3,6 +3,7 @@ Advanced Holdup for ESX - Edited/Made by Human Tree92 ([Velociti Entertainment C
 
 # Helpfull Info:
 * This has a lot of changes to suit my needs.
+* Can pretty much Rob every default Shop, Bank, Etc.
 
 # Requirements:
 * Required:
