@@ -32,7 +32,7 @@ ESX.RegisterCommand('robreset', 'admin', function(xPlayer, args, showError)
 end, false, {help = 'Reset Robbery Timer'})
 
 -- See if there is an On Going Robbery & Cool Down has Ended
-ESX.RegisterServerCallback('esx_advancedholdup:canStartRob', function(source, cb)
+ESX.RegisterServerCallback('esx_advancedholdup:checkRob', function(source, cb)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	if isCurrentRobbery == false and coolDown == false then
 		cb(true)

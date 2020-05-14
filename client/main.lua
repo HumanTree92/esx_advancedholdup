@@ -143,12 +143,14 @@ AddEventHandler('esx_advancedholdup:removeBlip', function()
 	RemoveBlip(blipRobbery)
 end)
 
+-- Entered Marker
 AddEventHandler('esx_advancedholdup:hasEnteredMarker', function(zone)
 	CurrentAction = 'start_robbery'
 	CurrentActionMsg = _U('press_to_rob')
 	CurrentActionData = {zone = zone} -- zone = zone
 end)
 
+-- Exited Marker
 AddEventHandler('esx_advancedholdup:hasExitedMarker', function(zone)
 	CurrentAction = nil
 end)
@@ -212,7 +214,7 @@ Citizen.CreateThread(function()
 				else
 					if not IsRobberyStarted then -- if not IsRobberyStarted then
 						if ESX.PlayerData.job and ESX.PlayerData.job.name == 'unemployed' or ESX.PlayerData.job and ESX.PlayerData.job.name == 'gang' then
-							ESX.TriggerServerCallback('esx_advancedholdup:canStartRob', function(success)
+							ESX.TriggerServerCallback('esx_advancedholdup:checkRob', function(success)
 								if success then
 									local zone = CurrentActionData.zone
 									TriggerServerEvent('esx_advancedholdup:robInProgress', zone)
