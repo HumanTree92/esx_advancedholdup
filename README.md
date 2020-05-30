@@ -1,13 +1,15 @@
 # About esx_advancedholdup:
 Advanced Holdup for ESX - Edited/Made by Human Tree92 ([Velociti Entertainment Customs & Wiki](http://www.velocitientertainment.com/customs/))
 
+I can not Guarantee that this will work with the Latest es_extended V2.
+
 # Helpfull Info:
 * This has a lot of changes to suit my needs.
 * Can pretty much Rob every default Shop, Bank, Etc.
 
 # Requirements:
 * Required:
-  * [es_extended](https://github.com/ESX-Org/es_extended)
+  * [es_extended V1 Final](https://github.com/ESX-Org/es_extended) or [extendedmode](https://github.com/extendedmode/extendedmode)
   * [esx_policejob](https://github.com/ESX-Org/esx_policejob)
 * Optional:
   * NONE
