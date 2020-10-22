@@ -18,10 +18,9 @@ Advanced Holdup for ESX V1 Final or EXM - Edited/Made by Human Tree92 ([Velociti
   * NONE
 
 # Download & Installation:
-1) Download the .zip.
-2) Extract the .zip or Open the .zip.
-3) Place `esx_advancedholdup` in your ESX Directory
-4) Add `start esx_advancedholdup` to your server.cfg
+1) Download Master or Release & Extract the .zip or Open the .zip.
+2) Place `esx_advancedholdup` in your ESX Directory
+3) Add `start esx_advancedholdup` to your server.cfg
 
 # Credits/Original Code:
 * [LuaDeldu](https://github.com/LuaDeldu)

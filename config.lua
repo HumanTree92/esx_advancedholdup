@@ -7,7 +7,7 @@ Config.CoolDown = 20 -- How long in Mins before a New Robbery can be Started
 Config.Zones = {
 	-- 24/7
 	["24/7 Innocence Boulevard | Los Santos"] = {
-		Coords = vector3(28.288, -1339.537, 28.497),
+		Coords = vector3(28.22, -1339.17, 28.5),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -17,7 +17,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["24/7 Senora Fwy 1 | Paleto Bay"] = {
-		Coords = vector3(1736.32, 6419.47, 34.03),
+		Coords = vector3(1734.89, 6420.87, 34.04),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -27,7 +27,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["24/7 Senora Fwy 2 | Sandy Shores"] = {
-		Coords = vector3(2673.28, 3286.25, 54.24),
+		Coords = vector3(2672.71, 3286.62, 54.24),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -37,7 +37,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["24/7 Alhambra Dr | Sandy Shores"] = {
-		Coords = vector3(1961.24, 3749.46, 31.34),
+		Coords = vector3(1959.32, 3749.0, 31.34),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -47,7 +47,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["24/7 Palomino Fwy | Sandy Shores"] = {
-		Coords = vector3(2549.88, 384.74, 107.62),
+		Coords = vector3(2549.23, 384.87, 107.62),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -57,7 +57,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["24/7 Little Seoul | Los Santos"] = {
-		Coords = vector3(-709.17, -904.21, 18.21),
+		Coords = vector3(-709.75, -904.16, 18.22),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -67,7 +67,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["24/7 Clinton Ave | Los Santos"] = {
-		Coords = vector3(377.97, 332.78, 102.57),
+		Coords = vector3(378.19, 333.41, 102.57),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -77,7 +77,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["24/7 Ineseno Road | Los Santos"] = {
-		Coords = vector3(-3047.13, 585.81, 6.91),
+		Coords = vector3(-3047.85, 585.66, 6.91),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -87,7 +87,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["24/7 Barbareno Rd | Los Santos"] = {
-		Coords = vector3(-3249.31, 1004.27, 11.83),
+		Coords = vector3(-3250.09, 1004.4, 11.83),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -97,7 +97,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["24/7 Route 68 | Paleto Bay"] = {
-		Coords = vector3(546.29, 2663.37, 41.16),
+		Coords = vector3(546.36, 2662.75, 41.16),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -108,7 +108,7 @@ Config.Zones = {
 	},
 	-- LTD GAS
 	["LTD Gasoline Grove Street | Los Santos"] = {
-		Coords = vector3(-43.057, -1748.811, 28.421),
+		Coords = vector3(-43.47, -1748.38, 28.42),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -118,7 +118,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["LTD Gasoline Mirror Park | Los Santos"] = {
-		Coords = vector3(1160.67, -314.40, 68.20),
+		Coords = vector3(1159.54, -314.07, 68.21),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -128,7 +128,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["LTD Gasoline Banham Canyon Dr | Los Santos"] = {
-		Coords = vector3(-1828.06, 799.17, 137.17),
+		Coords = vector3(-1829.27, 798.78, 137.19),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -138,7 +138,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["LTD Gasoline Grapeseed Main St | Grapeseed"] = {
-		Coords = vector3(1707.15, 4919.88, 41.06),
+		Coords = vector3(1707.88, 4920.5, 41.06),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -149,7 +149,7 @@ Config.Zones = {
 	},
 	-- ROBS LIQUOR
 	["Robs Liquor Great Ocean Hwy | Los Santos"] = {
-		Coords = vector3(-2959.33, 388.21, 13.00),
+		Coords = vector3(-2959.54, 387.05, 13.04),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -159,7 +159,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["Robs Liquor El Rancho Blvd | Los Santos"] = {
-		Coords = vector3(1126.80, -980.40, 44.41),
+		Coords = vector3(1126.81, -980.06, 44.42),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -169,7 +169,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["Robs Liquor San Andreas Ave | Los Santos"] = {
-		Coords = vector3(-1219.85, -916.27, 10.32),
+		Coords = vector3(-1220.87, -916.05, 10.33),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -179,7 +179,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["Robs Liquor Prosperity St | Los Santos"] = {
-		Coords = vector3(-1479.25, -374.17, 38.16),
+		Coords = vector3(-1478.93, -375.49, 38.16),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -189,7 +189,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["Scoops Liquor Barn Route 68 | Sandy Shores"] = {
-		Coords = vector3(1168.49, 2718.43, 36.16),
+		Coords = vector3(1169.33, 2717.78, 36.16),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -199,7 +199,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["Ace Liquor Algonquin Blvd | Sandy Shores"] = {
-		Coords = vector3(1396.54, 3610.97, 33.98),
+		Coords = vector3(1387.72, 3607.46, 33.98),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -210,7 +210,7 @@ Config.Zones = {
 	},
 	-- BARS
 	["Yellow Jack Panorama Dr | Sandy Shores"] = {
-		Coords = vector3(1990.57, 3044.95, 46.21),
+		Coords = vector3(1994.85, 3043.5, 46.21),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -220,7 +220,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["Tequi-La-La Eclipse Blvd | Los Santos"] = {
-		Coords = vector3(-562.05, 287.45, 81.18),
+		Coords = vector3(-571.13, 291.53, 78.18),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -230,7 +230,7 @@ Config.Zones = {
 		PoliceRequired = 3
 	},
 	["Vanilla Unicorn Elgin Ave | Los Santos"] = {
-		Coords = vector3(94.2, -1292.61, 28.27),
+		Coords = vector3(93.24, -1292.1, 28.27),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(2500,12500),
@@ -251,7 +251,7 @@ Config.Zones = {
 	},
 	-- BANKS
 	["Fleeca Bank Vespucci Boulevard | Los Santos"] = {
-		Coords = vector3(146.913, -1044.836, 28.376),
+		Coords = vector3(147.5, -1045.03, 28.37),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(25000,75000),
@@ -261,7 +261,7 @@ Config.Zones = {
 		PoliceRequired = 6
 	},
 	["Fleeca Bank Great Ocean Hwy | Los Santos"] = {
-		Coords = vector3(-2957.66, 481.45, 14.69),
+		Coords = vector3(-2957.63, 481.98, 14.7),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(25000,75000),
@@ -271,7 +271,7 @@ Config.Zones = {
 		PoliceRequired = 6
 	},
 	["Fleeca Bank Route 68 | Paleto Bay"] = {
-		Coords = vector3(1176.62, 2711.78, 37.1),
+		Coords = vector3(1175.85, 2711.72, 37.09),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(25000,75000),
@@ -281,7 +281,7 @@ Config.Zones = {
 		PoliceRequired = 6
 	},
 	["Fleeca Bank Blvd Del Perro | Los Santos"] = {
-		Coords = vector3(-1212.11, -336.0, 36.79),
+		Coords = vector3(-1211.12, -335.57, 36.78),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(25000,75000),
@@ -291,7 +291,7 @@ Config.Zones = {
 		PoliceRequired = 6
 	},
 	["Fleeca Bank Hawick Ave 1 | Los Santos"] = {
-		Coords = vector3(-354.2, -54.06, 48.05),
+		Coords = vector3(-353.41, -54.5, 48.04),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(25000,75000),
@@ -301,7 +301,7 @@ Config.Zones = {
 		PoliceRequired = 6
 	},
 	["Fleeca Bank Hawick Ave 2 | Los Santos"] = {
-		Coords = vector3(310.75, -283.07, 53.17),
+		Coords = vector3(311.69, -283.6, 53.16),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(25000,75000),
@@ -311,7 +311,7 @@ Config.Zones = {
 		PoliceRequired = 6
 	},
 	["Blaine County Savings Paleto Blvd | Paleto Bay"] = {
-		Coords = vector3(-107.06, 6474.80, 30.62),
+		Coords = vector3(-103.51, 6478.13, 30.63),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(25000,75000),
@@ -321,7 +321,7 @@ Config.Zones = {
 		PoliceRequired = 6
 	},
 	["Pacific Standard Vinewood Blvd | Los Santos"] = {
-		Coords = vector3(255.00, 225.85, 100.00),
+		Coords = vector3(254.02, 225.16, 100.88),
 		Marker = {Type = 1, r = 220, g = 110, b = 0, x = 1.5, y = 1.5, z = 1.0},
 		AreaSize = 15,
 		Reward = math.random(125000,1000000),
