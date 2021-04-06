@@ -23,6 +23,5 @@ client_scripts {
 }
 
 dependencies {
-	'es_extended',
-	'esx_policejob'
+	'es_extended'
 }
