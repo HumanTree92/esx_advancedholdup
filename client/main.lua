@@ -68,7 +68,7 @@ function RobberyZoneEvents(zone)
 				isInRobberyZone	= false
 
 				if not isRobberyDone then
-					PlaySoundFrontend(-1, "HACKING_FAILURE", 0, 1)
+					PlaySoundFrontend(-1, 'HACKING_FAILURE', 0, 1)
 					TriggerServerEvent('esx_advancedholdup:robberyCanceled', zone, true)
 					Citizen.Wait(1000)
 					loopAlarm = false
@@ -82,7 +82,7 @@ end
 -- Robbery Police Notification
 RegisterNetEvent('esx_advancedholdup:robPoliceNotif')
 AddEventHandler('esx_advancedholdup:robPoliceNotif', function(zone)
-	PlaySoundFrontend(-1, "Event_Start_Text", "GTAO_FM_Events_Soundset", 0)
+	PlaySoundFrontend(-1, 'Event_Start_Text', 'GTAO_FM_Events_Soundset', 0)
 	Citizen.Wait(1)
 	ESX.ShowAdvancedNotification(_U('police_alert'), _U('police_alert_alarm_subject'), _U('police_alert_alarm', zone), 'CHAR_CALL911', 1)
 end)
@@ -92,7 +92,7 @@ RegisterNetEvent('esx_advancedholdup:robCompNotif')
 AddEventHandler('esx_advancedholdup:robCompNotif', function()
 	isRobberyDone = true
 	IsRobberyStarted = false
-	PlaySoundFrontend(-1, "HACKING_SUCCESS", 0, 1)
+	PlaySoundFrontend(-1, 'HACKING_SUCCESS', 0, 1)
 	ESX.ShowNotification(_U('rob_complete'))
 	Citizen.Wait(20000)
 	loopAlarm = false
@@ -101,7 +101,7 @@ end)
 -- Robbery Complete At Notification
 RegisterNetEvent('esx_advancedholdup:robCompAtNotif')
 AddEventHandler('esx_advancedholdup:robCompAtNotif', function(zone, complete)
-	PlaySoundFrontend(-1, "Event_Start_Text", "GTAO_FM_Events_Soundset", 0)
+	PlaySoundFrontend(-1, 'Event_Start_Text', 'GTAO_FM_Events_Soundset', 0)
 	Citizen.Wait(1)
 
 	if complete then
@@ -115,7 +115,7 @@ end)
 RegisterNetEvent('esx_advancedholdup:loopAlarm')
 AddEventHandler('esx_advancedholdup:loopAlarm', function(zone)
 	while loopAlarm do
-		PlaySoundFromCoord(-1, "scanner_alarm_os", Config.Zones[zone].Coords, "dlc_xm_iaa_player_facility_sounds", 1, 100, 0)
+		PlaySoundFromCoord(-1, 'scanner_alarm_os', Config.Zones[zone].Coords, 'dlc_xm_iaa_player_facility_sounds', 1, 100, 0)
 		Citizen.Wait(1000)
 	end
 end)
@@ -212,8 +212,8 @@ Citizen.CreateThread(function()
 				if IsPedSittingInAnyVehicle(PlayerPedId()) then
 					ESX.ShowNotification(_U('rob_vehicle'))
 				else
-					if not IsRobberyStarted then -- if not IsRobberyStarted then
-						if ESX.PlayerData.job and ESX.PlayerData.job.name == 'unemployed' or ESX.PlayerData.job and ESX.PlayerData.job.name == 'gang' then
+					if not IsRobberyStarted then
+						if ESX.PlayerData.job and ESX.PlayerData.job.name == 'unemployed' then
 							ESX.TriggerServerCallback('esx_advancedholdup:checkRob', function(success)
 								if success then
 									local zone = CurrentActionData.zone
@@ -248,7 +248,7 @@ function drawTxt(x, y, width, height, scale, text, r, g, b, a)
 	SetTextEdge(1, 0, 0, 0, 255)
 	SetTextDropShadow()
 	SetTextOutline()
-	SetTextEntry("STRING")
+	SetTextEntry('STRING')
 	AddTextComponentString(text)
 	DrawText(x - width/2, y - height/2 + 0.005)
 end
