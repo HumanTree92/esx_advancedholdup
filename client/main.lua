@@ -1,22 +1,7 @@
 local HasAlreadyEnteredMarker, isInRobberyZone, isRobberyStarted, isRobberyDone, isPedArmed, loopAlarm = false, false, false, false, false, false
 local LastZone, CurrentAction, CurrentActionMsg
 local CurrentActionData	= {}
-local connectedPolice = 0
 local blipRobbery = nil
-ESX = nil
-
-Citizen.CreateThread(function()
-	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-		Citizen.Wait(0)
-	end
-
-	while ESX.GetPlayerData().job == nil do
-		Citizen.Wait(10)
-	end
-
-	ESX.PlayerData = ESX.GetPlayerData()
-end)
 
 RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(xPlayer)
@@ -120,12 +105,6 @@ AddEventHandler('esx_advancedholdup:loopAlarm', function(zone)
 	end
 end)
 
--- Police Connected
-RegisterNetEvent('esx_advancedholdup:connectedPolice')
-AddEventHandler('esx_advancedholdup:connectedPolice', function(_connectedPolice)
-	connectedPolice = _connectedPolice
-end)
-
 -- Create Blip
 RegisterNetEvent('esx_advancedholdup:createBlip')
 AddEventHandler('esx_advancedholdup:createBlip', function(coords)
@@ -171,13 +150,17 @@ Citizen.CreateThread(function()
 				if distance < Config.DrawDistance then
 					letSleep = false
 
-					if v.PoliceRequired <= connectedPolice and v.Marker.Type ~= -1 then
-						DrawMarker(v.Marker.Type, v.Coords, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Marker.x, v.Marker.y, v.Marker.z, v.Marker.r, v.Marker.g, v.Marker.b, 100, false, false, 2, false, false, false, false)
-					end
+					ESX.TriggerServerCallback('esx_advancedholdup:checkPolice', function(success)
+						if success then
+							if v.Marker.Type ~= -1 then
+								DrawMarker(v.Marker.Type, v.Coords, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Marker.x, v.Marker.y, v.Marker.z, v.Marker.r, v.Marker.g, v.Marker.b, 100, false, false, 2, false, false, false, false)
+							end
 
-					if v.PoliceRequired <= connectedPolice and distance < v.Marker.x then
-						isInMarker, isEnoughPolice, currentZone = true, true, k
-					end
+							if distance < v.Marker.x then
+								isInMarker, isEnoughPolice, currentZone = true, true, k
+							end
+						end
+					end, v.PoliceRequired)
 				end
 			end
 

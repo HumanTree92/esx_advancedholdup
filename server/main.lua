@@ -1,25 +1,16 @@
-ESX = nil
-local connectedPolice = 0
 local robberyPlayers = {}
 local isCurrentRobbery, coolDown = false, false
 
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-
 -- Count Police
-function CountPolice()
-	local xPlayers = ESX.GetPlayers()
-	connectedPolice = 0
+ESX.RegisterServerCallback('esx_advancedholdup:checkPolice', function(source, cb, reqPolice)
+	local xPlayers = ESX.GetExtendedPlayers('job', 'police')
 
-	for i=1, #xPlayers, 1 do
-		local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
-		if xPlayer.job.name == 'police' then
-			connectedPolice = connectedPolice + 1
-		end
+	if #xPlayers >= reqPolice then
+		cb(true)
+	else
+		cb(false)
 	end
-	
-	TriggerClientEvent('esx_advancedholdup:connectedPolice', -1, connectedPolice)
-	SetTimeout(60000, CountPolice)
-end
+end)
 
 -- Add Command to Start Timer
 ESX.RegisterCommand('robstart', 'admin', function(xPlayer, args, showError)
@@ -60,22 +51,19 @@ end)
 -- Robbery Canceled
 RegisterServerEvent('esx_advancedholdup:robberyCanceled')
 AddEventHandler('esx_advancedholdup:robberyCanceled', function(zone)
-	local xPlayer = ESX.GetPlayerFromId(source)
-	local xPlayers = ESX.GetPlayers()
+	local _source = source
+	local xPlayers = ESX.GetExtendedPlayers('job', 'police')
 	isCurrentRobbery = false
 
-	for i=1, #xPlayers, 1 do
-		local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
-		if xPlayer.job.name == 'police' then
-			TriggerClientEvent('esx_advancedholdup:robCompAtNotif', xPlayer.source, zone, false)
-			TriggerClientEvent('esx_advancedholdup:removeBlip', xPlayer.source)
-		end
+	for _, xPlayer in pairs(xPlayers) do
+		TriggerClientEvent('esx_advancedholdup:robCompAtNotif', xPlayer.source, zone, false)
+		TriggerClientEvent('esx_advancedholdup:removeBlip', xPlayer.source)
 	end
 
 	if robberyPlayers[source] then
+		local xPlayer = ESX.GetPlayerFromId(_source)
 		robberyPlayers[source] = nil
 		xPlayer.showNotification(_U('rob_cancel'))
-		--TriggerClientEvent('esx:showNotification', xPlayer.source, _U('rob_cancel'))
 	end
 end)
 
@@ -84,7 +72,7 @@ RegisterServerEvent('esx_advancedholdup:robInProgress')
 AddEventHandler('esx_advancedholdup:robInProgress', function(mainZone)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
-	local xPlayers = ESX.GetPlayers()
+	local xPlayers = ESX.GetExtendedPlayers('job', 'police')
 
 	if Config.Zones[mainZone] then
 		local zone = Config.Zones[mainZone]
@@ -93,23 +81,18 @@ AddEventHandler('esx_advancedholdup:robInProgress', function(mainZone)
 			if zone.Robbed ~= 0 and (os.time() - zone.Robbed) < zone.TimeBeforeNewRob then
 				local timerNewRob = zone.TimeBeforeNewRob - (os.time() - zone.Robbed)
 				xPlayer.showNotification(_U('rob_already', timerNewRob))
-				--TriggerClientEvent('esx:showNotification', source, _U('rob_already', timerNewRob))
 				return
 			else
-				if connectedPolice < zone.PoliceRequired then
+				if #xPlayers < zone.PoliceRequired then
 					xPlayer.showNotification(_U('rob_required', zone.PoliceRequired))
-					--TriggerClientEvent('esx:showNotification', source, _U('rob_required', zone.PoliceRequired))
 					return
 				end
 			end
 
 			isCurrentRobbery = true
-			for i=1, #xPlayers, 1 do
-				local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
-				if xPlayer.job.name == 'police' then
-					TriggerClientEvent('esx_advancedholdup:robPoliceNotif', xPlayer.source, mainZone)
-					TriggerClientEvent('esx_advancedholdup:createBlip', xPlayer.source, Config.Zones[mainZone].Coords)
-				end
+			for _, xPlayer in pairs(xPlayers) do
+				TriggerClientEvent('esx_advancedholdup:robPoliceNotif', xPlayer.source, mainZone)
+				TriggerClientEvent('esx_advancedholdup:createBlip', xPlayer.source, Config.Zones[mainZone].Coords)
 			end
 
 			xPlayer.showNotification(_U('rob_started'))
@@ -128,12 +111,9 @@ AddEventHandler('esx_advancedholdup:robInProgress', function(mainZone)
 						xPlayer.addAccountMoney('black_money', zone.Reward)
 						TriggerClientEvent('esx_advancedholdup:robCompNotif', xPlayer.source)
 
-						for i=1, #xPlayers, 1 do
-							local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
-							if xPlayer.job.name == 'police' then
-								TriggerClientEvent('esx_advancedholdup:robCompAtNotif', xPlayer.source, robberyPlayers[savedSource], true)
-								TriggerClientEvent('esx_advancedholdup:removeBlip', xPlayer.source)
-							end
+						for _, xPlayer in pairs(xPlayers) do
+							TriggerClientEvent('esx_advancedholdup:robCompAtNotif', xPlayer.source, robberyPlayers[savedSource], true)
+							TriggerClientEvent('esx_advancedholdup:removeBlip', xPlayer.source)
 						end
 					end
 				end
@@ -152,5 +132,3 @@ AddEventHandler('onResourceStart', function(resource)
 		return
 	end
 end)
-
-CountPolice()
