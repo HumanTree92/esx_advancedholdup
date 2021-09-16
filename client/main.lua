@@ -150,17 +150,13 @@ Citizen.CreateThread(function()
 				if distance < Config.DrawDistance then
 					letSleep = false
 
-					ESX.TriggerServerCallback('esx_advancedholdup:checkPolice', function(success)
-						if success then
-							if v.Marker.Type ~= -1 then
-								DrawMarker(v.Marker.Type, v.Coords, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Marker.x, v.Marker.y, v.Marker.z, v.Marker.r, v.Marker.g, v.Marker.b, 100, false, false, 2, false, false, false, false)
-							end
+					if v.Marker.Type ~= -1 then
+						DrawMarker(v.Marker.Type, v.Coords, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Marker.x, v.Marker.y, v.Marker.z, v.Marker.r, v.Marker.g, v.Marker.b, 100, false, false, 2, false, false, false, false)
+					end
 
-							if distance < v.Marker.x then
-								isInMarker, isEnoughPolice, currentZone = true, true, k
-							end
-						end
-					end, v.PoliceRequired)
+					if distance < v.Marker.x then
+						isInMarker, isEnoughPolice, currentZone = true, true, k
+					end
 				end
 			end
 

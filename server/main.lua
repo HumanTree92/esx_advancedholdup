@@ -125,7 +125,7 @@ AddEventHandler('esx_advancedholdup:robInProgress', function(mainZone)
 	end
 end)
 
--- 
+-- Start Timer
 AddEventHandler('onResourceStart', function(resource)
 	if resource == GetCurrentResourceName() then	
 		TriggerEvent('esx_advancedholdup:startTimer')
